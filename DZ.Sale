@@ -1,0 +1,29 @@
+public class Main {
+
+    public static void main(String[] args)
+    {
+       costOf(2001);
+      
+    }
+
+    public static int costOf(int cash)
+    {
+        int summ=0;
+        if (cash>=0&&cash<=500)
+        {
+            System.out.println("no sale");
+        }
+        else if(cash>=501&&cash<=1000)
+        {
+            System.out.println(summ=cash*90/100);
+        }
+        else if(cash>=1001&&cash<=2000)
+        {
+            System.out.println(summ=cash*85/100);
+        }
+        else
+        {
+            System.out.println(summ=cash*80/100);
+        }
+        return summ;
+    }
