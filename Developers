@@ -1,0 +1,46 @@
+public class Developer extends NameEntity {
+
+    private List<Skill>skills;
+
+    private String special;
+
+    public Developer() {
+        this.skills = new LinkedList<>();
+    }
+
+    public Developer(String name, String special) {
+        super(name);
+        this.special = special;
+        this.skills=new LinkedList<>();
+    }
+
+    public Developer(String name, List<Skill> skills, String special) {
+        super(name);
+        this.skills = skills;
+        this.special = special;
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
+    }
+
+    public String getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(String special) {
+        this.special = special;
+    }
+
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "skills=" + skills +
+                ", special='" + special + '\'' +
+                '}';
+    }
+}
