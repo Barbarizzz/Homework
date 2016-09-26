@@ -1,0 +1,25 @@
+public class ProjectDemo {
+    public static void main(String[] args) {
+
+        Developer developersql = new Developer("Mike Wasovski","Sql developer");
+        Developer developercpp = new Developer("Mikky Rurg","C++ developer");
+        Developer developerjava=new Developer("Anthony Hopkins","Java developer");
+
+        Skill cpp=new Skill("C++ skills");
+        Skill java=new Skill("Java skills");
+        Skill javascript=new Skill("JavaScript skills");
+
+        developersql.getSkills().add(cpp);
+        developercpp.getSkills().add(javascript);
+        developerjava.getSkills().add(cpp);
+
+        Team team1=new Team("Developers team");
+        team1.getDevelopers().add(developerjava);
+        team1.getDevelopers().add(developercpp);
+        team1.getDevelopers().add(developersql);
+
+        Project project1=new Project("NewProject");
+        project1.setTeam1(team1);
+        project1.showProjectInfo();
+    }
+}
