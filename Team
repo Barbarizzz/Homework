@@ -1,0 +1,37 @@
+public class Team extends NameEntity {
+
+    public List<Developer>developers;
+
+    public Team() {
+    }
+
+    public Team(String name) {
+        super(name);
+        this.developers = new LinkedList<>();
+    }
+
+    public Team(String name, List<Developer> developers) {
+        super(name);
+        this.developers = developers;
+    }
+
+    public List<Developer> getDevelopers() {
+        return developers;
+    }
+
+    public void setDevelopers(List<Developer> developers) {
+        this.developers = developers;
+    }
+
+    public void informationDeveloper()
+    {
+       for (Developer developer : developers)
+       {
+           System.out.println("Information Developer");
+           System.out.println("_____________________");
+           System.out.println("Developer"+developer.getName());
+           System.out.println("Special"+developer.getSpecial());
+           System.out.println("Skills"+developer.getSkills());
+       }
+    }
+}
