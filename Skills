@@ -1,0 +1,14 @@
+public class Skill extends NameEntity {
+
+    public Skill() {
+    }
+
+    public Skill(String name) {
+        super(name);
+    }
+
+    @Override
+    public String toString() {
+        return this.getName();
+    }
+}
