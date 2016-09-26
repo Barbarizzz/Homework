@@ -1,0 +1,36 @@
+public class Project extends NameEntity {
+
+    private Team team1;
+
+    public Project() {
+    }
+
+    public Project(String name) {
+        super(name);
+    }
+
+    public Project(String name, Team team1) {
+        super(name);
+        this.team1 = team1;
+    }
+
+    public Team getTeam1() {
+        return team1;
+    }
+
+    public void setTeam1(Team team1) {
+        this.team1 = team1;
+    }
+
+    public void showProjectInfo()
+    {
+        System.out.println("Project: " + this.getName());
+
+        System.out.println("Team: " + this.getTeam1());
+
+        System.out.println("Developers Info:");
+
+        this.getTeam1().informationDeveloper();
+
+    }
+}
