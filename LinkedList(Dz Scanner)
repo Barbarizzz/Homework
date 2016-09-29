@@ -1,0 +1,27 @@
+public class array_li {
+
+    public static void main(String[] args) {
+           int size,number1,number2;
+
+        System.out.println("Enter pls size collection");
+        Scanner scanner1=new Scanner(System.in);
+        size=scanner1.nextInt();
+        System.out.println("Add collection initial limit");
+        number1=scanner1.nextInt();
+        System.out.println("Add collection final limit");
+        number2=scanner1.nextByte();
+
+        List<Integer>list1=new LinkedList<>();
+
+        Random random1=new Random();
+
+        for (int i=0;i<size;i++ )
+        {
+            list1.add(random1.nextInt(number1)+number2);
+        }
+
+        System.out.println("Information about collection");
+        System.out.println(list1);
+
+    }
+}
