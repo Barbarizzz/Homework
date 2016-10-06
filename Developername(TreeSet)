@@ -1,0 +1,14 @@
+package com.cbsgenesis.homework.SortDeveloper;
+
+import java.util.Comparator;
+
+/**
+ * Created by Barbarizzz on 06.10.2016.
+ */
+public class Developername implements Comparator <Developer> {
+
+    @Override
+    public int compare(Developer developerfirst, Developer developersecond) {
+        return developerfirst.getName().compareTo(developersecond.getName());
+    }
+}
