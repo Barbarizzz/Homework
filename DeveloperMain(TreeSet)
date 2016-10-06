@@ -1,0 +1,74 @@
+package com.cbsgenesis.homework.SortDeveloper;
+
+import java.util.Scanner;
+import java.util.TreeSet;
+
+/**
+ * Created by Barbarizzz on 06.10.2016.
+ */
+public class ConsoleProject {
+    public static void main(String[] args) {
+        System.out.println("Welcome to the menu");
+        int answer = 0;
+        do {
+            System.out.println("_________________________");
+            System.out.println("1-Отсортировать по имени");
+            System.out.println("_________________________");
+            System.out.println("2-Отсортировать по фамилии");
+            System.out.println("_________________________");
+            System.out.println("3-Отсортировать по зарплате");
+            System.out.println("_________________________");
+            System.out.println("4-Выйти из программы");
+
+            System.out.println("Выберите нужный пункт меню");
+            Scanner scanner1 = new Scanner(System.in);
+            answer = scanner1.nextInt();
+
+            switch (answer) {
+                case 1:
+                    sortName();
+                    break;
+                case 2:
+                    sortLastname();
+                    break;
+                case 3:
+                    sortSalary();
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("Извените такого пункта в меню не существует");
+                    break;
+            }
+
+        } while (answer != 4);
+    }
+
+
+        public static void showInformation(TreeSet<Developer> developers1){
+            System.out.println(developers1);
+    }
+        public static void addDeveloeprs(TreeSet<Developer>adddeveloeprs){
+            adddeveloeprs.add(new Developer("Игорь","Николаев",1200));
+            adddeveloeprs.add(new Developer("Григорий","Иванов",3500));
+            adddeveloeprs.add(new Developer("Валерий","Сидоров",1000));
+            adddeveloeprs.add(new Developer("Инокентий","Смоктуновский",7000));
+    }
+        public static void sortName(){
+            TreeSet<Developer>developers1=new TreeSet<>(new Developername());
+            addDeveloeprs(developers1);
+            showInformation(developers1);
+        }
+
+        public static void sortLastname(){
+            TreeSet<Developer>developers1=new TreeSet<>(new DeveloperLastname());
+            addDeveloeprs(developers1);
+            showInformation(developers1);
+        }
+
+        public static void sortSalary(){
+            TreeSet<Developer>developers1=new TreeSet<>(new DeveloperSalary());
+            addDeveloeprs(developers1);
+            showInformation(developers1);
+        }
+}
