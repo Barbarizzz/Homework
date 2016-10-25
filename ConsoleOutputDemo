@@ -1,0 +1,60 @@
+package sada.Package1.HomeWork;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+/**
+ * Created by artem on 22.10.16.
+ */
+public class ConsoleInPutDemo {
+
+    public static void main(String[] args) {
+        InputInformation();
+
+    }
+
+    public static void InputInformation()
+    {
+        String fileDemo="/home/artem/project1/src/main/resources/FileDemo";
+        String name,text;
+        Date date1=new Date();
+        String str1 = date1.toString();
+        System.out.println("===================");
+        System.out.println("Welcome.Please enter your name");
+        System.out.println("===================");
+        Scanner scanner =new Scanner(System.in);
+        name=scanner.nextLine();
+        System.out.println("===================");
+        System.out.println("Please enter text");
+        text=scanner.nextLine();
+        byte [] buffer=name.getBytes();
+        byte [] buffer2=text.getBytes();
+        byte [] buffer3=str1.getBytes();
+        FileOutputStream fileOutputStream1=null;
+        try
+        {
+            fileOutputStream1=new FileOutputStream(fileDemo);
+            fileOutputStream1.write(buffer);
+            fileOutputStream1.write(buffer2);
+            fileOutputStream1.write(buffer3);
+        }
+
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if (fileOutputStream1 != null)
+                    fileOutputStream1.close();
+                }catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+}
